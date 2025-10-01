@@ -30,16 +30,16 @@ const HeroSection = () => {
           {/* Quick Stats */}
           <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
             <div className="bg-background/10 backdrop-blur-sm rounded-lg p-6 border border-primary-foreground/20">
-              <div className="text-3xl font-bold text-primary-foreground">3,500+</div>
-              <div className="text-sm text-primary-foreground/80">Verified Brokerages</div>
+              <div className="text-3xl font-bold text-primary-foreground">4,743</div>
+              <div className="text-sm text-primary-foreground/80">Companies Listed</div>
             </div>
             <div className="bg-background/10 backdrop-blur-sm rounded-lg p-6 border border-primary-foreground/20">
-              <div className="text-3xl font-bold text-primary-foreground">50</div>
-              <div className="text-sm text-primary-foreground/80">States Covered</div>
+              <div className="text-3xl font-bold text-primary-foreground">7,038</div>
+              <div className="text-sm text-primary-foreground/80">Active Agents</div>
             </div>
             <div className="bg-background/10 backdrop-blur-sm rounded-lg p-6 border border-primary-foreground/20">
-              <div className="text-3xl font-bold text-primary-foreground">100%</div>
-              <div className="text-sm text-primary-foreground/80">Free to Use</div>
+              <div className="text-3xl font-bold text-primary-foreground">196,976</div>
+              <div className="text-sm text-primary-foreground/80">Total Reviews</div>
             </div>
           </div>
         </div>
