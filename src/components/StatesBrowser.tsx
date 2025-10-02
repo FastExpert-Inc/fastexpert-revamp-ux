@@ -1,3 +1,12 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 const StatesBrowser = () => {
   const states = [
     { name: "Alabama", companies: 245, agents: 1823, reviews: 8456 },
@@ -63,34 +72,34 @@ const StatesBrowser = () => {
             Find top-rated real estate companies in your state
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {states.map((state) => (
-              <div
-                key={state.name}
-                className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow flex items-center gap-6"
-              >
-                <a
-                  href={`#${state.name.toLowerCase()}`}
-                  className="text-primary hover:underline font-semibold text-lg min-w-[140px]"
-                >
-                  {state.name}
-                </a>
-                <div className="space-y-2 text-lg flex-1">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Companies:</span>
-                    <span className="font-medium">{state.companies.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Agents:</span>
-                    <span className="font-medium">{state.agents.toLocaleString()}</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Reviews:</span>
-                    <span className="font-medium">{state.reviews.toLocaleString()}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
+          <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="font-semibold">State</TableHead>
+                  <TableHead className="font-semibold text-right">Companies</TableHead>
+                  <TableHead className="font-semibold text-right">Agents</TableHead>
+                  <TableHead className="font-semibold text-right">Reviews</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {states.map((state) => (
+                  <TableRow key={state.name} className="cursor-pointer">
+                    <TableCell className="font-medium">
+                      <a
+                        href={`#${state.name.toLowerCase()}`}
+                        className="text-primary hover:underline"
+                      >
+                        {state.name}
+                      </a>
+                    </TableCell>
+                    <TableCell className="text-right">{state.companies.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">{state.agents.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">{state.reviews.toLocaleString()}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
