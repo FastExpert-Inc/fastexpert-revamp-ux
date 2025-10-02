@@ -103,8 +103,8 @@ const StatesBrowser = () => {
 
   return (
     <section className="py-16 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
+      <div className="mx-auto px-4" style={{ maxWidth: '1140px' }}>
+        <div>
           <h2 className="text-3xl font-bold text-foreground mb-3 text-center">
             Browse Real Estate Brokerages By State
           </h2>
