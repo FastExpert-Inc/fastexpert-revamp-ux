@@ -1,57 +1,64 @@
-import { MapPin } from "lucide-react";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const StatesBrowser = () => {
   const states = [
-    { name: "Alabama", count: 245 },
-    { name: "Alaska", count: 89 },
-    { name: "Arizona", count: 312 },
-    { name: "Arkansas", count: 156 },
-    { name: "California", count: 892 },
-    { name: "Colorado", count: 267 },
-    { name: "Connecticut", count: 178 },
-    { name: "Delaware", count: 67 },
-    { name: "Florida", count: 756 },
-    { name: "Georgia", count: 445 },
-    { name: "Hawaii", count: 134 },
-    { name: "Idaho", count: 123 },
-    { name: "Illinois", count: 398 },
-    { name: "Indiana", count: 287 },
-    { name: "Iowa", count: 189 },
-    { name: "Kansas", count: 167 },
-    { name: "Kentucky", count: 198 },
-    { name: "Louisiana", count: 234 },
-    { name: "Maine", count: 112 },
-    { name: "Maryland", count: 289 },
-    { name: "Massachusetts", count: 356 },
-    { name: "Michigan", count: 367 },
-    { name: "Minnesota", count: 298 },
-    { name: "Mississippi", count: 145 },
-    { name: "Missouri", count: 276 },
-    { name: "Montana", count: 98 },
-    { name: "Nebraska", count: 134 },
-    { name: "Nevada", count: 187 },
-    { name: "New Hampshire", count: 123 },
-    { name: "New Jersey", count: 423 },
-    { name: "New Mexico", count: 134 },
-    { name: "New York", count: 612 },
-    { name: "North Carolina", count: 489 },
-    { name: "North Dakota", count: 76 },
-    { name: "Ohio", count: 378 },
-    { name: "Oklahoma", count: 189 },
-    { name: "Oregon", count: 234 },
-    { name: "Pennsylvania", count: 445 },
-    { name: "Rhode Island", count: 89 },
-    { name: "South Carolina", count: 267 },
-    { name: "South Dakota", count: 67 },
-    { name: "Tennessee", count: 312 },
-    { name: "Texas", count: 978 },
-    { name: "Utah", count: 178 },
-    { name: "Vermont", count: 87 },
-    { name: "Virginia", count: 389 },
-    { name: "Washington", count: 345 },
-    { name: "West Virginia", count: 98 },
-    { name: "Wisconsin", count: 267 },
-    { name: "Wyoming", count: 54 },
+    { name: "Alabama", companies: 245, agents: 1823, reviews: 8456 },
+    { name: "Alaska", companies: 89, agents: 542, reviews: 2134 },
+    { name: "Arizona", companies: 312, agents: 2456, reviews: 12345 },
+    { name: "Arkansas", companies: 156, agents: 987, reviews: 4567 },
+    { name: "California", companies: 892, agents: 6789, reviews: 34567 },
+    { name: "Colorado", companies: 267, agents: 1987, reviews: 9876 },
+    { name: "Connecticut", companies: 178, agents: 1234, reviews: 6789 },
+    { name: "Delaware", companies: 67, agents: 456, reviews: 1987 },
+    { name: "Florida", companies: 756, agents: 5432, reviews: 28765 },
+    { name: "Georgia", companies: 445, agents: 3456, reviews: 16789 },
+    { name: "Hawaii", companies: 134, agents: 876, reviews: 4321 },
+    { name: "Idaho", companies: 123, agents: 765, reviews: 3456 },
+    { name: "Illinois", companies: 398, agents: 2987, reviews: 14567 },
+    { name: "Indiana", companies: 287, agents: 2123, reviews: 10234 },
+    { name: "Iowa", companies: 189, agents: 1345, reviews: 6234 },
+    { name: "Kansas", companies: 167, agents: 1123, reviews: 5432 },
+    { name: "Kentucky", companies: 198, agents: 1456, reviews: 6987 },
+    { name: "Louisiana", companies: 234, agents: 1765, reviews: 8234 },
+    { name: "Maine", companies: 112, agents: 687, reviews: 3234 },
+    { name: "Maryland", companies: 289, agents: 2234, reviews: 10987 },
+    { name: "Massachusetts", companies: 356, agents: 2765, reviews: 13456 },
+    { name: "Michigan", companies: 367, agents: 2876, reviews: 13987 },
+    { name: "Minnesota", companies: 298, agents: 2345, reviews: 11234 },
+    { name: "Mississippi", companies: 145, agents: 934, reviews: 4456 },
+    { name: "Missouri", companies: 276, agents: 2098, reviews: 9876 },
+    { name: "Montana", companies: 98, agents: 612, reviews: 2876 },
+    { name: "Nebraska", companies: 134, agents: 876, reviews: 4123 },
+    { name: "Nevada", companies: 187, agents: 1432, reviews: 6876 },
+    { name: "New Hampshire", companies: 123, agents: 765, reviews: 3678 },
+    { name: "New Jersey", companies: 423, agents: 3234, reviews: 15678 },
+    { name: "New Mexico", companies: 134, agents: 876, reviews: 4234 },
+    { name: "New York", companies: 612, agents: 4876, reviews: 24567 },
+    { name: "North Carolina", companies: 489, agents: 3765, reviews: 18234 },
+    { name: "North Dakota", companies: 76, agents: 487, reviews: 2123 },
+    { name: "Ohio", companies: 378, agents: 2876, reviews: 13876 },
+    { name: "Oklahoma", companies: 189, agents: 1345, reviews: 6345 },
+    { name: "Oregon", companies: 234, agents: 1765, reviews: 8456 },
+    { name: "Pennsylvania", companies: 445, agents: 3456, reviews: 16876 },
+    { name: "Rhode Island", companies: 89, agents: 567, reviews: 2678 },
+    { name: "South Carolina", companies: 267, agents: 1987, reviews: 9456 },
+    { name: "South Dakota", companies: 67, agents: 432, reviews: 1876 },
+    { name: "Tennessee", companies: 312, agents: 2456, reviews: 11876 },
+    { name: "Texas", companies: 978, agents: 7234, reviews: 36789 },
+    { name: "Utah", companies: 178, agents: 1234, reviews: 5987 },
+    { name: "Vermont", companies: 87, agents: 543, reviews: 2456 },
+    { name: "Virginia", companies: 389, agents: 2987, reviews: 14234 },
+    { name: "Washington", companies: 345, agents: 2654, reviews: 12876 },
+    { name: "West Virginia", companies: 98, agents: 612, reviews: 2987 },
+    { name: "Wisconsin", companies: 267, agents: 1987, reviews: 9567 },
+    { name: "Wyoming", companies: 54, agents: 345, reviews: 1567 },
   ];
 
   return (
@@ -65,26 +72,34 @@ const StatesBrowser = () => {
             Find top-rated real estate companies in your state
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
-            {states.map((state) => (
-              <a
-                key={state.name}
-                href={`#${state.name.toLowerCase()}`}
-                className="group bg-card border border-border rounded-lg p-4 hover:shadow-card-hover transition-all duration-300 hover:border-primary hover:-translate-y-1"
-              >
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <MapPin className="h-4 w-4 text-primary group-hover:text-accent transition-colors" />
-                    <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors">
-                      {state.name}
-                    </span>
-                  </div>
-                  <span className="text-xs text-muted-foreground bg-secondary rounded-full px-2 py-1">
-                    {state.count}
-                  </span>
-                </div>
-              </a>
-            ))}
+          <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="font-semibold">State</TableHead>
+                  <TableHead className="font-semibold text-right">Companies</TableHead>
+                  <TableHead className="font-semibold text-right">Agents</TableHead>
+                  <TableHead className="font-semibold text-right">Reviews</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {states.map((state) => (
+                  <TableRow key={state.name} className="cursor-pointer">
+                    <TableCell className="font-medium">
+                      <a
+                        href={`#${state.name.toLowerCase()}`}
+                        className="text-primary hover:underline"
+                      >
+                        {state.name}
+                      </a>
+                    </TableCell>
+                    <TableCell className="text-right">{state.companies.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">{state.agents.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">{state.reviews.toLocaleString()}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
