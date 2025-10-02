@@ -9,12 +9,12 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-type SortColumn = "sales" | "volume" | null;
+type SortColumn = "name" | "sales" | "volume" | null;
 type SortDirection = "asc" | "desc";
 
 const StatesBrowser = () => {
-  const [sortColumn, setSortColumn] = useState<SortColumn>(null);
-  const [sortDirection, setSortDirection] = useState<SortDirection>("desc");
+  const [sortColumn, setSortColumn] = useState<SortColumn>("name");
+  const [sortDirection, setSortDirection] = useState<SortDirection>("asc");
 
   const statesData = [
     { name: "Alabama", companies: 245, agents: 1823, reviews: 8456, sales: 4521, volume: 1250000000 },
@@ -81,8 +81,18 @@ const StatesBrowser = () => {
   const sortedStates = [...statesData].sort((a, b) => {
     if (!sortColumn) return 0;
     
-    const aValue = a[sortColumn];
-    const bValue = b[sortColumn];
+    // Handle string sorting for name
+    if (sortColumn === "name") {
+      if (sortDirection === "asc") {
+        return a.name.localeCompare(b.name);
+      } else {
+        return b.name.localeCompare(a.name);
+      }
+    }
+    
+    // Handle numeric sorting for sales and volume
+    const aValue = a[sortColumn] as number;
+    const bValue = b[sortColumn] as number;
     
     if (sortDirection === "asc") {
       return aValue - bValue;
@@ -106,8 +116,16 @@ const StatesBrowser = () => {
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead className="font-semibold">State</TableHead>
                   <TableHead 
+                    className="font-semibold cursor-pointer hover:text-primary"
+                    onClick={() => handleSort("name")}
+                  >
+                    <div className="flex items-center gap-1">
+                      State
+                      <ArrowUpDown className="h-4 w-4" />
+                    </div>
+                  </TableHead>
+                  <TableHead
                     className="font-semibold text-right cursor-pointer hover:text-primary"
                     onClick={() => handleSort("sales")}
                   >
