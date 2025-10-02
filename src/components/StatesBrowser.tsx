@@ -107,9 +107,6 @@ const StatesBrowser = () => {
               <TableHeader>
                 <TableRow>
                   <TableHead className="font-semibold">State</TableHead>
-                  <TableHead className="font-semibold text-right">Companies</TableHead>
-                  <TableHead className="font-semibold text-right">Agents</TableHead>
-                  <TableHead className="font-semibold text-right">Reviews</TableHead>
                   <TableHead 
                     className="font-semibold text-right cursor-pointer hover:text-primary"
                     onClick={() => handleSort("sales")}
@@ -128,6 +125,9 @@ const StatesBrowser = () => {
                       <ArrowUpDown className="h-4 w-4" />
                     </div>
                   </TableHead>
+                  <TableHead className="font-semibold text-right">Companies</TableHead>
+                  <TableHead className="font-semibold text-right">Agents</TableHead>
+                  <TableHead className="font-semibold text-right">Reviews</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -141,11 +141,11 @@ const StatesBrowser = () => {
                         {state.name}
                       </a>
                     </TableCell>
+                    <TableCell className="text-right">{state.sales.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">${(state.volume / 1000000).toFixed(0)}M</TableCell>
                     <TableCell className="text-right">{state.companies.toLocaleString()}</TableCell>
                     <TableCell className="text-right">{state.agents.toLocaleString()}</TableCell>
                     <TableCell className="text-right">{state.reviews.toLocaleString()}</TableCell>
-                    <TableCell className="text-right">{state.sales.toLocaleString()}</TableCell>
-                    <TableCell className="text-right">${(state.volume / 1000000).toFixed(0)}M</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
