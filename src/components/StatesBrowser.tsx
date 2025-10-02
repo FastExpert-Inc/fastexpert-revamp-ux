@@ -1,3 +1,12 @@
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+
 const StatesBrowser = () => {
   const states = [
     { name: "Alabama", companies: 245, agents: 1823, reviews: 8456 },
@@ -53,42 +62,44 @@ const StatesBrowser = () => {
   ];
 
   return (
-    <section className="py-10 bg-background">
+    <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-foreground mb-2 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-foreground mb-3 text-center">
             Browse Real Estate Brokerages By State
           </h2>
-          <p className="text-muted-foreground text-center mb-6">
+          <p className="text-muted-foreground text-center mb-10">
             Find top-rated real estate companies in your state
           </p>
 
-          <div className="grid md:grid-cols-2 gap-4">
-            {states.map((state) => (
-              <a
-                key={state.name}
-                href={`#${state.name.toLowerCase()}`}
-                className="bg-card border border-border rounded-lg p-4 hover:shadow-card-hover transition-all duration-200 hover:scale-[1.02] flex items-center justify-between group"
-              >
-                <div className="font-semibold text-primary group-hover:underline min-w-[140px]">
-                  {state.name}
-                </div>
-                <div className="flex gap-6 text-sm">
-                  <div className="text-right">
-                    <div className="font-semibold">{state.companies.toLocaleString()}</div>
-                    <div className="text-muted-foreground text-xs">Companies</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold">{state.agents.toLocaleString()}</div>
-                    <div className="text-muted-foreground text-xs">Agents</div>
-                  </div>
-                  <div className="text-right">
-                    <div className="font-semibold">{state.reviews.toLocaleString()}</div>
-                    <div className="text-muted-foreground text-xs">Reviews</div>
-                  </div>
-                </div>
-              </a>
-            ))}
+          <div className="bg-card border border-border rounded-lg overflow-hidden">
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="font-semibold">State</TableHead>
+                  <TableHead className="font-semibold text-right">Companies</TableHead>
+                  <TableHead className="font-semibold text-right">Agents</TableHead>
+                  <TableHead className="font-semibold text-right">Reviews</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {states.map((state) => (
+                  <TableRow key={state.name} className="cursor-pointer">
+                    <TableCell className="font-medium">
+                      <a
+                        href={`#${state.name.toLowerCase()}`}
+                        className="text-primary hover:underline"
+                      >
+                        {state.name}
+                      </a>
+                    </TableCell>
+                    <TableCell className="text-right">{state.companies.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">{state.agents.toLocaleString()}</TableCell>
+                    <TableCell className="text-right">{state.reviews.toLocaleString()}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </div>
         </div>
       </div>
