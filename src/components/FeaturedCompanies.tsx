@@ -1,11 +1,18 @@
+import kellerWilliamsLogo from "@/assets/logo-keller-williams.png";
+import coldwellBankerLogo from "@/assets/logo-coldwell-banker.png";
+import remaxLogo from "@/assets/logo-remax.png";
+import century21Logo from "@/assets/logo-century21.png";
+import compassLogo from "@/assets/logo-compass.png";
+import sothebysLogo from "@/assets/logo-sothebys.png";
+
 const FeaturedCompanies = () => {
   const companies = [
-    { name: "Keller Williams", logo: "KW" },
-    { name: "Coldwell Banker", logo: "CB" },
-    { name: "RE/MAX", logo: "RE/MAX" },
-    { name: "Century 21", logo: "C21" },
-    { name: "Compass", logo: "CP" },
-    { name: "Sotheby's", logo: "SR" },
+    { name: "Keller Williams", logo: kellerWilliamsLogo },
+    { name: "Coldwell Banker", logo: coldwellBankerLogo },
+    { name: "RE/MAX", logo: remaxLogo },
+    { name: "Century 21", logo: century21Logo },
+    { name: "Compass", logo: compassLogo },
+    { name: "Sotheby's", logo: sothebysLogo },
   ];
 
   return (
@@ -21,9 +28,11 @@ const FeaturedCompanies = () => {
               className="bg-card rounded-lg shadow-card p-6 flex items-center justify-center hover:shadow-card-hover transition-all duration-300 hover:scale-105 cursor-pointer group"
             >
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary group-hover:text-accent transition-colors">
-                  {company.logo}
-                </div>
+                <img 
+                  src={company.logo} 
+                  alt={`${company.name} logo`}
+                  className="h-12 w-auto mx-auto object-contain"
+                />
                 <div className="text-xs text-muted-foreground mt-2">{company.name}</div>
               </div>
             </div>
