@@ -67,15 +67,15 @@ const StatesBrowser = () => {
             {states.map((state) => (
               <div
                 key={state.name}
-                className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow"
+                className="bg-card border border-border rounded-lg p-6 hover:shadow-md transition-shadow flex items-center gap-6"
               >
                 <a
                   href={`#${state.name.toLowerCase()}`}
-                  className="text-primary hover:underline font-semibold text-lg block mb-3"
+                  className="text-primary hover:underline font-semibold text-lg min-w-[140px]"
                 >
                   {state.name}
                 </a>
-                <div className="space-y-2 text-lg">
+                <div className="space-y-2 text-lg flex-1">
                   <div className="flex justify-between">
                     <span className="text-muted-foreground">Companies:</span>
                     <span className="font-medium">{state.companies.toLocaleString()}</span>
