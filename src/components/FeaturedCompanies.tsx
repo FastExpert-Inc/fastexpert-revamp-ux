@@ -19,11 +19,16 @@ const FeaturedCompanies = () => {
     { name: "RE/MAX", logo: remaxLogo },
     { name: "Century 21", logo: century21Logo },
     { name: "Compass", logo: compassLogo },
+    { name: "Sotheby's International Realty", logo: sothebysLogo },
+    { name: "Berkshire Hathaway HomeServices", logo: kellerWilliamsLogo },
+    { name: "eXp Realty", logo: coldwellBankerLogo },
+    { name: "Better Homes and Gardens Real Estate", logo: remaxLogo },
+    { name: "Engel & Völkers", logo: century21Logo },
   ];
 
   return (
-    <section className="py-6 bg-secondary/30">
-      <div className="mx-auto relative" style={{ maxWidth: '1140px' }}>
+    <section className="py-16 bg-secondary/30">
+      <div className="mx-auto" style={{ maxWidth: '1140px' }}>
         <h2 className="text-center text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
           Featured Real Estate Companies
         </h2>
@@ -50,8 +55,8 @@ const FeaturedCompanies = () => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious className="left-0" />
-          <CarouselNext className="right-0" />
+          <CarouselPrevious />
+          <CarouselNext />
         </Carousel>
       </div>
     </section>

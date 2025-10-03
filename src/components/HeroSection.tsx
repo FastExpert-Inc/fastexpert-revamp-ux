@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-gradient-hero py-6 overflow-hidden">
+    <section className="relative bg-gradient-hero py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-grid-white/10 bg-[size:20px_20px]" />
       <div className="mx-auto relative z-10" style={{ maxWidth: '1140px' }}>
         <div className="max-w-4xl mx-auto text-center">
