@@ -2,7 +2,7 @@ import { Building2, Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-foreground text-background py-6">
       <div className="mx-auto" style={{ maxWidth: '1140px' }}>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
