@@ -62,7 +62,7 @@ const TopCompaniesList = () => {
   ];
 
   return (
-    <section className="py-16 bg-secondary/20">
+    <section className="py-6 bg-secondary/20">
       <div className="mx-auto" style={{ maxWidth: '1140px' }}>
         <div>
           <h2 className="text-3xl font-bold text-foreground mb-3 text-center">

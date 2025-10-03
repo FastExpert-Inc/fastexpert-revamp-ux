@@ -27,7 +27,7 @@ const FeaturedCompanies = () => {
   ];
 
   return (
-    <section className="py-16 bg-secondary/30">
+    <section className="py-6 bg-secondary/30">
       <div className="mx-auto" style={{ maxWidth: '1140px' }}>
         <h2 className="text-center text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
           Featured Real Estate Companies
