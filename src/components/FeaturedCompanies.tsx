@@ -39,7 +39,7 @@ const FeaturedCompanies = () => {
           }}
           className="w-full"
         >
-          <CarouselContent>
+          <CarouselContent className="py-4">
             {companies.map((company) => (
               <CarouselItem key={company.name} className="md:basis-1/3 lg:basis-1/5">
                 <div className="bg-card rounded-lg shadow-card p-6 flex items-center justify-center hover:shadow-card-hover transition-all duration-300 hover:scale-105 cursor-pointer group h-full">
