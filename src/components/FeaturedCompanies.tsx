@@ -28,7 +28,7 @@ const FeaturedCompanies = () => {
 
   return (
     <section className="py-16 bg-secondary/30">
-      <div className="mx-auto px-4" style={{ maxWidth: '1140px' }}>
+      <div className="mx-auto" style={{ maxWidth: '1140px' }}>
         <h2 className="text-center text-sm font-semibold text-muted-foreground mb-8 uppercase tracking-wider">
           Featured Real Estate Companies
         </h2>
